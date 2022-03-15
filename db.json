@@ -42,5 +42,43 @@
       "name": "Killer Frost",
       "alterEgo": "Caitlin Snow"
     }
+  ],
+  "colors": [
+    {
+      "id": 1,
+      "name": "Red"
+    },
+    {
+      "id": 2,
+      "name": "Blue"
+    },
+    {
+      "id": 3,
+      "name": "Green"
+    },
+    {
+      "id": 4,
+      "name": "Yellow"
+    },
+    {
+      "id": 5,
+      "name": "Purple"
+    },
+    {
+      "id": 6,
+      "name": "Orange"
+    },
+    {
+      "id": 7,
+      "name": "Pink"
+    },
+    {
+      "id": 8,
+      "name": "Black"
+    },
+    {
+      "id": 9,
+      "name": "White"
+    }
   ]
 }
