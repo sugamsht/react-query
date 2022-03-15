@@ -1,7 +1,12 @@
-import { useHerosData } from "../hooks/useHerosData";
+import { useAddSuperHeroData, useHerosData } from "../hooks/useHerosData";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export const RQSuperHeroesPage = () => {
+
+  const [name, setName] = useState('')
+  const [alterEgo, setAlterEgo] = useState('')
+
 
   // const [hero, setHero] = useState(3000)
 
@@ -15,13 +20,36 @@ export const RQSuperHeroesPage = () => {
 
   const { data, error, isLoading, isFetching, refetch } = useHerosData({ onSuccess, onError });
 
-  console.log({ isLoading, isFetching })
+  //mutate data(api) to add new hero
+  const { mutate: addHero } = useAddSuperHeroData()
+  const handleAddHeroClick = () => {
+    const hero = { name, alterEgo }
+    addHero(hero)
+  }
+
+
+  // console.log({ isLoading, isFetching })
   if (isLoading || isFetching) return <div>Loading...</div>
   if (error) return <div>{error.message}</div>
-
   return (
     <div>
       <h1>RQ Super Heroes</h1>
+      <div>
+        <input
+          type='text'
+          value={name}
+          placeholder='Supehero Name'
+          onChange={e => setName(e.target.value)}
+        />
+        <input
+          type='text'
+          value={alterEgo}
+          placeholder='Alter Ego'
+          onChange={e => setAlterEgo(e.target.value)}
+        />
+        <button onClick={handleAddHeroClick}>Add Hero</button>
+      </div>
+
       <ul>
         {data?.data.map(hero => (
           <li key={hero.id}>

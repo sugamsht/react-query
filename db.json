@@ -19,6 +19,16 @@
       "id": 4,
       "name": "The Flash",
       "alterEgo": "Barry Allen"
+    },
+    {
+      "name": "Green Lantern",
+      "alterEgo": "Hal Jordan",
+      "id": 5
+    },
+    {
+      "name": "Iron Man",
+      "alterEgo": "Tony Stark",
+      "id": 6
     }
   ],
   "sidekicks": [
