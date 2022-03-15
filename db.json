@@ -20,5 +20,27 @@
       "name": "The Flash",
       "alterEgo": "Barry Allen"
     }
+  ],
+  "sidekicks": [
+    {
+      "id": 1,
+      "name": "Night Wing",
+      "alterEgo": "Dick Grayson"
+    },
+    {
+      "id": 2,
+      "name": "Super Dog",
+      "alterEgo": "Krypto"
+    },
+    {
+      "id": 3,
+      "name": "Batgirl",
+      "alterEgo": "Kara Zor-El"
+    },
+    {
+      "id": 4,
+      "name": "Killer Frost",
+      "alterEgo": "Caitlin Snow"
+    }
   ]
 }
