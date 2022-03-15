@@ -1,4 +1,5 @@
 import { useHerosData } from "../hooks/useHerosData";
+import { Link } from "react-router-dom";
 
 export const RQSuperHeroesPage = () => {
 
@@ -24,7 +25,7 @@ export const RQSuperHeroesPage = () => {
       <ul>
         {data?.data.map(hero => (
           <li key={hero.id}>
-            <h2>{hero.name}</h2>
+            <Link to={`/rq-super-heros/${hero.id}`}>{hero.name}</Link>
             <p>{hero.alterEgo}</p>
           </li>
         ))}
