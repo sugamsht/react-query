@@ -26,9 +26,14 @@
       "id": 5
     },
     {
-      "name": "Iron Man",
-      "alterEgo": "Tony Stark",
+      "name": "Cat Woman",
+      "alterEgo": "Selina Kyle",
       "id": 6
+    },
+    {
+      "name": "Iron Man ",
+      "alterEgo": "Tony Stark",
+      "id": 7
     }
   ],
   "sidekicks": [

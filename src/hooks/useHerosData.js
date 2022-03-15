@@ -38,7 +38,35 @@ export const useAddSuperHeroData = () => {
     const queryClient = useQueryClient()
     return useMutation(addSuperHero, {
         onSuccess: (data) => {
-            queryClient.invalidateQueries('superheroes') //invalidate query to refetch data
+            // queryClient.invalidateQueries('superheroes') //invalidate query to refetch data
+            queryClient.setQueryData('superheroes', (oldQueryData) => {
+                return {
+                    ...oldQueryData,
+                    data: [...oldQueryData.data, data.data] //add new hero to data without refetching
+                }
+            })
         }
+
+        //Optimistic Updates
+        // onMutate: async (newHero) => {   //called before mutation is fired
+        //     await queryClient.cancelQueries('superheroes') //cancel query to refetch data
+        //     const previousHeroData = queryClient.getQueryData('superheroes')
+        //     queryClient.setQueryData('superheroes', (oldQueryData) => {
+        //         return {
+        //             ...oldQueryData,
+        //             data: [...oldQueryData.data, { id: oldQueryData?.data?.length + 1, ...newHero }] //add new hero to data without refetching
+        //         }
+        //     })
+        //     return {
+        //         previousHeroData,
+        //     }
+        // },
+        // onError: (_error, _hero, context) => { //called if error occurs on mutation
+        //     queryClient.setQueryData('superheroes', context.previousHeroData) //revert data to previous state
+        // },
+        // onSettled: () => { //called if mution is successful or error occurs
+        //     queryClient.invalidateQueries('superheroes') //invalidate query to refetch data
+        // },
+
     })
 }
