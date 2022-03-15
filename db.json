@@ -79,6 +79,10 @@
     {
       "id": 9,
       "name": "White"
+    },
+    {
+      "id": 10,
+      "name": "Brown"
     }
   ]
 }
